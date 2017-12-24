@@ -1,21 +1,20 @@
 <template>
   <div>
-    <index-header class="m-index-header" v-on:showBar="show"></index-header>
-    <index-sidebar class="m-index-sidebar" :class="{'z-index':zIndex}" :sidebarShow="sidebarShow" v-on:hideMask="hideMask"></index-sidebar>
+    <v-header class="m-index-header" v-on:showBar="show"></v-header>
+    <v-sidebar class="m-index-sidebar" :class="{'z-index':zIndex}" :sidebarShow="sidebarShow" v-on:hideMask="hideMask"></v-sidebar>
     <index-section class="m-index-section"></index-section>
-    <index-footer class="m-index-footer"> </index-footer>
+    <v-footer class="m-index-footer"> </v-footer>
   </div>
 </template>
 
 <script>
-import indexHeader from '../components/index-header.vue'
+import vHeader from '../components/v-header.vue'
 import indexSection from '../components/index-section.vue'
-import indexFooter from '../components/index-footer.vue'
-import indexSidebar from '../components/index-sidebar.vue'
+import vFooter from '../components/v-footer.vue'
+import vSidebar from '../components/v-sidebar.vue'
 
 export default {
-  // components: { 'index-header':indexHeader, indexFooter, indexSection },
-  components: { indexHeader, indexFooter, indexSection, indexSidebar },
+  components: { 'v-header': vHeader, 'v-footer': vFooter, indexSection, 'v-sidebar': vSidebar },
   data () {
     return {
       sidebarShow: false,
@@ -40,30 +39,7 @@ export default {
 </script>
 
 <style>
-  .m-index-header {
-    height: 40px;
-  }
-  .m-index-footer {
-    height: 55px;
-  }
-  .m-index-sidebar {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    transition: all 0.5s linear;
-  }
-  .m-index-sidebar.z-index {
-    z-index: 10;
-  }
-  .modal-open {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
+
 </style>
 
 

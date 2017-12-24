@@ -1,21 +1,25 @@
 <template>
   <div>
-     <mt-tabbar fixed v-model="selected">
+     <mt-tabbar fixed v-model="selected" value>
         <mt-tab-item id="tab-container1"  value>
             <img slot="icon" src="../assets/logo.png">
-            大家的
+            <router-link to="/">首页</router-link>
         </mt-tab-item>
         <mt-tab-item id="tab-container2"  >
             <img slot="icon" src="../assets/logo.png">
-            他的
+            <router-link to="/cinema">电影</router-link>
         </mt-tab-item>
         <mt-tab-item id="tab-container3"  >
             <img slot="icon" src="../assets/logo.png">
-            你的
+            <router-link to="/music">音乐</router-link>
         </mt-tab-item>
         <mt-tab-item id="tab-container4"  >
+            <img slot="icon" src="../assets/logo.png">
+            <router-link to="/books">书籍</router-link>
+        </mt-tab-item>
+        <mt-tab-item id="tab-container5"  >
           <img slot="icon" src="../assets/logo.png">
-            我的
+          <router-link to="/mycenter">我的</router-link>
         </mt-tab-item>
       </mt-tabbar>
   </div>
