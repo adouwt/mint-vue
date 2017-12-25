@@ -23,6 +23,9 @@ p,ul,li,tr,td,dl,dt,dd,h1,h2,h3,h4,h5,h6,h7 {
   background-color: #fff;
 } /* 横向滚动条和纵向滚动条相交处尖角的颜色 */
 
+a {
+  text-decoration: none;
+}
 .v-footer {
   height: 55px;
 }
