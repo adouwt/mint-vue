@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="header" :class="model">
     <mt-header :title="title" fixed>
       <mt-button icon="more" slot="right" @click="showMask"></mt-button>
     </mt-header>
@@ -21,6 +21,11 @@ export default {
   data () {
     return {
       maskShow: false
+    }
+  },
+  computed: {
+    model() {
+      return this.$store.getters.getModel
     }
   },
   methods: {

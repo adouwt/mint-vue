@@ -33,6 +33,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   components: {},
   data () {
@@ -41,10 +43,18 @@ export default {
     }
   },
   created () {
-
+    this.getBookList()
   },
   methods: {
-
+    getBookList () {
+      axios.get('/v2/book/1220562')
+      .then( res => {
+        console.log(res,'书籍')
+      })
+      .catch( err => {
+        console.log(err,'书籍err')
+      })
+    }
   }
 }
 </script>

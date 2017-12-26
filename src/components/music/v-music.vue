@@ -33,18 +33,29 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   components: {},
   data () {
     return {
-      selected: '国内新歌'
+      selected: '国内新歌',
+      musicList: []
     }
   },
   created () {
-
+    this.getMusicList()
   },
   methods: {
-
+    getMusicList () {
+      axios.get('/v2/music/10000037')
+      .then( res => {
+        console.log(res,'音乐')
+      })
+      .catch( err => {
+        console.log(err,'音乐err')
+      })
+    }
   }
 }
 </script>

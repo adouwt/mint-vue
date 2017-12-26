@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="m-main">
+    <div class="m-main" :class="model">
       <v-header :title="selectedValue">
       </v-header>
       <mt-loadmore  ref="loadmore">
@@ -22,7 +22,7 @@
           </mt-tab-container-item>
         </mt-tab-container>
       </mt-loadmore>
-      <div class="v-footer">
+      <div class="v-footer" :class="model">
         <mt-tabbar v-model="selectedValue" fixed>
         <mt-tab-item id="首页">
           <img slot="icon" src="../assets/img/logo.png">
@@ -71,6 +71,11 @@ export default {
       selectedValue: '首页',
     }
   },
+  computed: {
+    model() {
+      return this.$store.getters.getModel
+    }
+  }
 }
 </script>
 

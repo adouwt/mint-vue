@@ -20,8 +20,10 @@
         </p>
       </div>
       <div class='modal' @click="changeModel">
-        <div class="avatar"><img src="../../assets/img/logo.png" width="18" height="18"></div>
-        <!-- <div class="name">{{this.$store.getter.getModelText}}</div>  -->
+        <div class="avatar">
+          <img src="../../assets/img/logo.png" width="18" height="18">
+        </div>
+        <div class="name">{{this.$store.getters.getModelText}}</div> 
         <!-- vuex  相当于全局注入 vuex  然后取这里面的值 -->
       </div>
     </div>
@@ -38,18 +40,16 @@ export default {
 
   },
   computed: {
-    //改变模式图片
-    // changeModelImg() {
-    //   if (!this.$store.state.isNight) {
-    //     return require('../../assets/img/logo.png')
-    //   } else {
-    //     return require('../../assets/img/logo.png')
-    //   }
-    // }
+    // 计算属性，当只有属性值变化时才会被重新计算，这里的属性值会被缓存，这样不至于每次都要去计算一次
+    //返回当前模式 vuex 的使用，返回一个全局的属性
+    model() {
+      return this.$store.getters.getModel
+    }
   },
   methods: {
     changeModel () {
-      this.$store.dispatch('changeModel');
+      this.$store.dispatch('changeModel');// actions
+      // document.body.className='night'
     }
   }
 }

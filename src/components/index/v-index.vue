@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="model">
     <div class="swipe">
       <mt-swipe @change="handleChange">
         <mt-swipe-item>1</mt-swipe-item>
@@ -91,6 +91,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   components: {},
   data () {
@@ -100,6 +101,11 @@ export default {
   },
   created () {
 
+  },
+  computed: {
+    model() {
+      return this.$store.getters.getModel
+    }
   },
   methods: {
     handleChange () {

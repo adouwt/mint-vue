@@ -3,8 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-// import store from './store/getter.js'
-// import state from './store/state.js'
+import store from './store'
 
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
@@ -16,8 +15,7 @@ Vue.use(MintUI)
 new Vue({
   el: '#app',
   router,
-  // store,
-  // state,
+  store,
   template: '<App/>',
   components: { App }
 })

@@ -17,6 +17,7 @@
     "@fortawesome/fontawesome": "^1.0.1",
     "@fortawesome/vue-fontawesome": "0.0.21",
     "animate.css": "^3.5.2",
+    "axios": "^0.17.1",
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
     "vue": "^2.5.2",

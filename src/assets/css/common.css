@@ -3,6 +3,33 @@ p,ul,li,tr,td,dl,dt,dd,h1,h2,h3,h4,h5,h6,h7 {
   margin:0;
   padding: 0;
 }
+body {
+  font: 12px Helvetica,Arial,sans-serif;
+  line-height: 1.62;
+  margin: 0;
+}
+.m-main {
+  padding: 8px;
+}
+.night {
+  background-color:#666 !important;
+  color:#eee;
+}
+.night .mint-header {
+  background-color:#666 !important;
+  color:#eee;
+}
+.night .mint-tabbar.is-fixed {
+  background-color:#666 !important;
+  color:#eee;
+  border-top: 1px solid #eee;
+}
+.night .mint-tabbar > .mint-tab-item.is-selected {
+  background-color:#666 !important;
+}
+.night .mint-navbar {
+  background-color:#666 !important;
+}
 ::-webkit-scrollbar {
   width: 5px;
 } /* 这是针对缺省样式 (必须的) */
