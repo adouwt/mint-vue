@@ -13,14 +13,18 @@
       <!-- tab-container -->
       <mt-tab-container v-model="selected">
         <mt-tab-container-item id="国内热门">
-          <ul>
-            <li v-for="item in cinemaInList" :key="item.id">
-              <img :src="item.images.small" >
-              <p>片名：{{item.orignal_title}}</p>
-              <p>上映：{{item.pubdate}}</p>
-              <p>评分：{{item.rating}}</p>
-            </li>
-          </ul>
+          <div ref="wrapper" class="list-wrapper">
+            <div class="list-content">
+              <ul>
+                <li v-for="item in cinemaInList" :key="item.id">
+                  <img :src="item.images.small" >
+                  <p>片名：{{item.orignal_title}}</p>
+                  <p>上映：{{item.pubdate}}</p>
+                  <p>评分：{{item.rating}}</p>
+                </li>
+              </ul>
+            </div>
+          </div>
         </mt-tab-container-item>
         <mt-tab-container-item id="国外热门">
           <ul>
@@ -69,6 +73,11 @@
 
 <script>
 import axios from 'axios'
+import BScroll from 'better-scroll'
+const options = {
+  scrollY: true ,// 因为scrollY默认为true，其实可以省略,
+  hasVerticalScroll: true
+}
 
 export default {
   components: {},
@@ -85,17 +94,36 @@ export default {
   created () {
     this.getCinemaList()
   },
+  mounted() {
+    // this.$nextTick(() => {
+    //   this.scroll = new Bscroll(this.$refs.wrapper, {})
+    // })
+  },
   methods: {
     getCinemaList () {
       axios.get('/v2/movie/nowplaying?apikey=0df993c66c0c636e29ecbb5344252a4a')
       .then( res => {
-        this.cinemaInList = (res.data.entries).slice(0,10);
+        this.cinemaInList = (res.data.entries).slice(0,9);
+        this.$nextTick(() => {
+          if (!this.scroll) {
+            this.scroll = new BScroll(this.$refs.wrapper, {})
+            console.log(this.scroll)
+            this.scroll.on('touchend', (pos) => {
+              // 下拉动作
+              if (pos.y > 50) {
+                this.loadData()
+              }
+            })
+          } else {
+            this.scroll.refresh()
+          }
+        })
         this.cinemaOutList = (res.data.entries).slice(10,15);
         this.cinemaInList = (res.data.entries).slice(15,20);
         this.cinemaHeighList = (res.data.entries).slice(20,25);
         this.cinemaBeautyList = (res.data.entries).slice(25,30);
         this.cinemaOldList = (res.data.entries).slice(30,-1);
-        // console.log(this.cinemaInList)
+        console.log(this.cinemaInList)
       })
       .catch( err => {
         console.log(err,'电影err')
@@ -126,6 +154,12 @@ export default {
   img {
     width: 100%;
   }
+}
+
+.list-wrapper {
+  height: 500px;
+  overflow: hidden;
+  position: relative;
 }
 
 </style>
