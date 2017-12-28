@@ -1,38 +1,81 @@
 <template>
   <div>
-    <div>
-      <div >
-        <mt-navbar v-model="selected" class="scroll-items">
-          <mt-tab-item id="热门事件">热门事件</mt-tab-item>
-          <mt-tab-item id="科技">科技</mt-tab-item>
-          <mt-tab-item id="体育">体育</mt-tab-item>
-          <mt-tab-item id="学术">学术</mt-tab-item>
-          <mt-tab-item id="法制">法制</mt-tab-item>
-        </mt-navbar>
+    <div class="news-wrapper" >
+      <div class="news-list-wrapper" ref='newsListWrapper'>
+        <ul>
+          <li>热门事件</li>
+          <li>科技</li>
+          <li>热门事件</li>
+          <li>体育</li>
+          <li>热门事件</li>
+          <li>学术</li>
+          <li>热门事件</li>
+          <li>法制</li>
+          <li>热门事件</li>
+          <li>法制</li>
+          <li>热门事件</li>
+          <li>法制</li>
+          <li>热门事件</li>
+        </ul>
       </div>
-      <!-- tab-container -->
-      <mt-tab-container v-model="selected">
-        <mt-tab-container-item id="热门事件">
-          热门事件
-        </mt-tab-container-item>
-        <mt-tab-container-item id="科技">
-          科技
-        </mt-tab-container-item>
-        <mt-tab-container-item id="体育">
-          3高体育分
-        </mt-tab-container-item>
-        <mt-tab-container-item id="学术">
-          学术
-        </mt-tab-container-item>
-        <mt-tab-container-item id="法制">
-          法制
-        </mt-tab-container-item>
-      </mt-tab-container>
+      <div class="news-content-wrapper" ref="newsContentWrapper">
+        <div>
+          <p>
+            热门事件
+          </p>
+          <p>
+            热门事件
+          </p>
+          <p>
+            热门事件
+          </p>
+          <p>
+            热门事件
+          </p>
+          <p>
+            热门事件
+          </p>
+          <p>
+            热门事件
+          </p>
+          <p>
+            热门事件
+          </p>
+          <p>
+            热门事件
+          </p>
+          <p>
+            热门事件
+          </p>
+          <p>
+            热门事件
+          </p>
+          <p>
+          ai 智能
+          </p>
+          <p>
+            智能
+          </p>
+          <p>
+            智能
+          </p>
+          <p>
+          ai 智能
+          </p>
+          <p>
+            智能
+          </p>
+          <p>
+            智能
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import BScroll from 'better-scroll'
 export default {
   components: {},
   data () {
@@ -41,11 +84,55 @@ export default {
     }
   },
   created () {
-
+    // this.$nextTick(() => {
+    //   this._initScroll()
+    // })
+  },
+  mounted() { // 只有dom 在页面显示完全后，bs 才能抓起到
+    setTimeout(() => {
+      this._initScroll()
+    },2000)
   },
   methods: {
-
+    _initScroll () {
+      console.log(123)
+      this.scroll = new BScroll(this.$refs.newsListWrapper, {})
+      this.scroll = new BScroll(this.$refs.newsContentWrapper, {});
+      console.log(this.scroll)
+    }
   }
 }
 </script>
+
+<style lang='less'>
+.mint-tab-container-item {
+  height: 500px;
+}
+.news-wrapper {
+  display: flex;
+  position: absolute;
+  top: 0px;
+  bottom:50px;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  background-color: #ddd;
+  .news-list-wrapper {
+    flex: 1;
+    background: #eee;
+    li {
+      padding: 5px;
+    }
+  }
+  .news-content-wrapper {
+    flex: 3;
+    p {
+      padding: 10px;
+      color: #111;
+    }
+  }
+}
+
+</style>
+
 

@@ -104,20 +104,6 @@ export default {
       axios.get('/v2/movie/nowplaying?apikey=0df993c66c0c636e29ecbb5344252a4a')
       .then( res => {
         this.cinemaInList = (res.data.entries).slice(0,9);
-        this.$nextTick(() => {
-          if (!this.scroll) {
-            this.scroll = new BScroll(this.$refs.wrapper, {})
-            console.log(this.scroll)
-            this.scroll.on('touchend', (pos) => {
-              // 下拉动作
-              if (pos.y > 50) {
-                this.loadData()
-              }
-            })
-          } else {
-            this.scroll.refresh()
-          }
-        })
         this.cinemaOutList = (res.data.entries).slice(10,15);
         this.cinemaInList = (res.data.entries).slice(15,20);
         this.cinemaHeighList = (res.data.entries).slice(20,25);
@@ -156,11 +142,7 @@ export default {
   }
 }
 
-.list-wrapper {
-  height: 500px;
-  overflow: hidden;
-  position: relative;
-}
+
 
 </style>
 

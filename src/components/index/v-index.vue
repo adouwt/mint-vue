@@ -1,144 +1,267 @@
 <template>
-  <div :class="model">
-    <div class="swipe">
-      <mt-swipe @change="handleChange">
-        <mt-swipe-item>1</mt-swipe-item>
-        <mt-swipe-item>2</mt-swipe-item>
-        <mt-swipe-item>3</mt-swipe-item>
-      </mt-swipe>
-    </div>
-    <div class="index-cinema">
-      <h4 class="index-cinema-title">
-        热门电影
-      </h4>
-      <div>
-        <img src="../../assets/img/logo.png" alt="">
-        <p>导演：二零二</p>
-        <p>评价：贼好</p>
+  <div>
+    <div class="news-wrapper" >
+      <div class="news-list-wrapper" ref='newsListWrapper'>
+        <ul>
+          <li @click="selectMenu($index, event)">1热门事件</li>
+          <li>2科技</li>
+          <li>3热门事件</li>
+          <li>4体育</li>
+          <li>5热门事件</li>
+          <li>6学术</li>
+          <li>7热门事件</li>
+          <li>8法制</li>
+          <li>9热门事件</li>
+          <li>10法制</li>
+          <li>11热门事件</li>
+          <li>12法制</li>
+          <li>13热门事件</li>
+        </ul>
       </div>
-      <div>
-        <img src="../../assets/img/logo.png" alt="">
-        <p>导演：二零二</p>
-        <p>评价：贼好</p>
-      </div>
-      <div>
-        <img src="../../assets/img/logo.png" alt="">
-        <p>导演：二零二</p>
-        <p>评价：贼好</p>
-      </div>
-    </div>
-    <div class="index-cinema">
-      <h4 class="index-cinema-title">
-        热门音乐
-      </h4>
-      <div>
-        <img src="../../assets/img/logo.png" alt="">
-        <p>歌手：二零二</p>
-        <p>评价：贼好</p>
-      </div>
-      <div>
-        <img src="../../assets/img/logo.png" alt="">
-        <p>歌手：二零二</p>
-        <p>评价：贼好</p>
-      </div>
-      <div>
-        <img src="../../assets/img/logo.png" alt="">
-        <p>歌手：二零二</p>
-        <p>评价：贼好</p>
-      </div>
-    </div>
-    <div class="index-cinema">
-      <h4 class="index-cinema-title">
-        热门书籍
-      </h4>
-      <div>
-        <img src="../../assets/img/logo.png" alt="">
-        <p>作者：二零二</p>
-        <p>评价：贼好</p>
-      </div>
-      <div>
-        <img src="../../assets/img/logo.png" alt="">
-        <p>导演：二零二</p>
-        <p>评价：贼好</p>
-      </div>
-      <div>
-        <img src="../../assets/img/logo.png" alt="">
-        <p>导演：二零二</p>
-        <p>评价：贼好</p>
-      </div>
-    </div>
-    <div class="index-cinema">
-      <h4 class="index-cinema-title">
-        热点新闻
-      </h4>
-      <div>
-        <img src="../../assets/img/logo.png" alt="">
-        <p>标题：二零二</p>
-        <p>评价：贼好</p>
-      </div>
-      <div>
-        <img src="../../assets/img/logo.png" alt="">
-        <p>标题：二零二</p>
-        <p>评价：贼好</p>
-      </div>
-      <div>
-        <img src="../../assets/img/logo.png" alt="">
-        <p>标题：二零二</p>
-        <p>评价：贼好</p>
+      <div class="news-content-wrapper" ref="newsContentWrapper">
+        <div >
+          <div class="news-contents-wrapper-div">
+            <h3>1</h3>
+            <p>
+            热门事件
+            </p>
+            <p>
+              热门事件
+            </p>
+            <p>
+              热门事件
+            </p>
+          </div>
+          <div class="news-contents-wrapper-div">
+            <h3>2</h3>
+            <p>
+            热门事件
+            </p>
+            <p>
+              热门事件
+            </p>
+            <p>
+              热门事件
+            </p>
+          </div>
+          <div class="news-contents-wrapper-div">
+            <h3>3</h3>
+            <p>
+            热门事件
+            </p>
+            <p>
+              热门事件
+            </p>
+            <p>
+              热门事件
+            </p>
+          </div>
+          <div class="news-contents-wrapper-div">
+            <h3>4</h3>
+            <p>
+            热门事件
+            </p>
+            <p>
+              热门事件
+            </p>
+            <p>
+              热门事件
+            </p>
+          </div>
+          <div class="news-contents-wrapper-div">
+            <h3>5</h3>
+            <p>
+            热门事件
+            </p>
+            <p>
+              热门事件
+            </p>
+            <p>
+              热门事件
+            </p>
+          </div>
+          <div class="news-contents-wrapper-div">
+            <h3>6</h3>
+            <p>
+            热门事件
+            </p>
+            <p>
+              热门事件
+            </p>
+            <p>
+              热门事件
+            </p>
+            <p>
+              热门事件
+            </p>
+          </div>
+          <div class="news-contents-wrapper-div">
+            <h3>7</h3>
+            <p>
+            热门事件
+            </p>
+            <p>
+              热门事件
+            </p>
+            <p>
+              热门事件
+            </p>
+          </div>
+          <div class="news-contents-wrapper-div">
+            <h3>8</h3>
+            <p>
+            热门事件
+            </p>
+            
+            <p>
+              热门事件
+            </p>
+          </div>
+          <div class="news-contents-wrapper-div">
+            <h3>9</h3>
+            <p>
+            热门事件
+            </p>
+            <p>
+              热门事件
+            </p>
+            <p>
+              热门事件
+            </p>
+          </div>
+          <div class="news-contents-wrapper-div">
+            <h3>10</h3>
+            <p>
+            热门事件
+            </p>
+            <p>
+              热门事件
+            </p>
+            <p>
+              热门事件
+            </p>
+          </div>
+          <div class="news-contents-wrapper-div">
+            <h3>11</h3>
+            <p>
+            热门事件
+            </p>
+            <p>
+              热门事件
+            </p>
+            <p>
+              热门事件
+            </p>
+             <p>
+              热门事件
+            </p>
+            <p>
+              热门事件
+            </p>
+          </div>
+          <div class="news-contents-wrapper-div">
+            <h3>12</h3>
+            <p>
+            热门事件
+            </p>
+            <p>
+              热门事件
+            </p>
+            <p>
+              热门事件
+            </p>
+          </div>
+          <div class="news-contents-wrapper-div">
+            <h3>13</h3>
+            <p>
+            热门事件
+            </p>
+            <p>
+              热门事件
+            </p>
+            <p>
+              热门事件
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
+import BScroll from 'better-scroll'
 export default {
   components: {},
   data () {
     return {
-
+      selected: '热门事件',
+      listHeight: [],
+      scrollY: 0
     }
   },
   created () {
-
+    
   },
-  computed: {
-    model() {
-      return this.$store.getters.getModel
-    }
+  mounted() { // 只有dom 在页面显示完全后，bs 才能抓到高度,如果在那种tab 标签的形式中，在display:none的情况下，无法抓取高度
+    this.$nextTick(() => {
+      this._initScroll();
+      this.calculateHeight();
+    })
   },
   methods: {
-    handleChange () {
-      console.log('点击跳转到对应的页面，这里可以用编程导航 跳转')
+    calculateHeight () {
+      var contentWrapper = this.$refs.newsContentWrapper.getElementsByClassName('news-contents-wrapper-div');
+      let height = 0;
+      this.listHeight.push(height);
+      for(var i=0;i<contentWrapper.length;i++) {
+        let item = contentWrapper[i];
+        height += item.clientHeight;
+        this.listHeight.push(height);
+        console.log(this.listHeight)
+      }
+    },
+    _initScroll () {
+      this.listScroll = new BScroll(this.$refs.newsListWrapper, {})
+      this.contentScroll = new BScroll(this.$refs.newsContentWrapper, {});
+      this.contentScroll.on('scroll', (pos) => {
+        this.scrollY = Math.abs(Math.round(pos.y));
+        console.log(this.scrollY, 'this.scrollY')
+      });
     }
   }
 }
 </script>
 
 <style lang='less'>
- .swipe {
-  height: 100px;
-  .mint-swipe-items-wrap>div {
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    height: 100px;
-    width: 100%;
-    background-color:#ddd;
-  }
- }
-  .index-cinema {
-    div {
-      padding-bottom: 10px;
-      border-bottom:1px solid #ddd;
+.mint-tab-container-item {
+  height: 500px;
+}
+.news-wrapper {
+  display: flex;
+  position: absolute;
+  top: 0px;
+  bottom:50px;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  background-color: #ddd;
+  .news-list-wrapper {
+    flex: 1;
+    background: #eee;
+    li {
+      padding: 5px;
     }
-    .index-cinema-title {
-       margin-top: 20px;
-    } 
   }
+  .news-content-wrapper {
+    flex: 3;
+    p {
+      padding: 10px;
+      color: #111;
+    }
+  }
+}
 
- 
- 
 </style>
 
 
