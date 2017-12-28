@@ -109,7 +109,6 @@ export default {
         this.cinemaHeighList = (res.data.entries).slice(20,25);
         this.cinemaBeautyList = (res.data.entries).slice(25,30);
         this.cinemaOldList = (res.data.entries).slice(30,-1);
-        console.log(this.cinemaInList)
       })
       .catch( err => {
         console.log(err,'电影err')

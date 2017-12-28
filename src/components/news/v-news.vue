@@ -95,10 +95,8 @@ export default {
   },
   methods: {
     _initScroll () {
-      console.log(123)
       this.scroll = new BScroll(this.$refs.newsListWrapper, {})
       this.scroll = new BScroll(this.$refs.newsContentWrapper, {});
-      console.log(this.scroll)
     }
   }
 }

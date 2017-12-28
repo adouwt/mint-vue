@@ -3,7 +3,7 @@
     <mt-header :title="title" fixed>
       <mt-button icon="more" slot="right" @click="showMask"></mt-button>
     </mt-header>
-    <div class="mask" v-show="maskShow" @click.stop.prevent="hideMask">
+    <div class="mask" v-show="maskShow" @click.stop="hideMask">
     </div>
     <div class="sideBar" v-show="maskShow">
       <v-sidebar></v-sidebar>
