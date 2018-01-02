@@ -97,6 +97,8 @@ export default {
     _initScroll () {
       this.scroll = new BScroll(this.$refs.newsListWrapper, {})
       this.scroll = new BScroll(this.$refs.newsContentWrapper, {});
+      console.log(this.scroll)
+      
     }
   }
 }

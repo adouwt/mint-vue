@@ -104,7 +104,7 @@ export default {
     selectMenu(index) {
       let foodList = this.$refs.foodList;
       let el = foodList[index];
-      this.contentScroll.scrollToElement(el, 300); // bs 提供的方法
+      this.contentScroll.scrollToElement(el, 500); // bs 提供的方法
     },
     _initScroll () {
       this.listScroll = new BScroll(this.$refs.newsListWrapper, {})
