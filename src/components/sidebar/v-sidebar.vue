@@ -48,7 +48,7 @@ export default {
   },
   methods: {
     changeModel () {
-      this.$store.dispatch('changeModel');// actions
+      this.$store.dispatch('changeModel');// actions dispach方法， 管理mutation
       // document.body.className='night'
     }
   }
